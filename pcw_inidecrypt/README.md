@@ -12,7 +12,7 @@ To dump and highlight decrypted passwords from ini-files, execute pcw_inidecrypt
 
 pcw_inidecrypt.exe will recursivly go through the directories to find all ini-files. If an ini-file contains an "encrypted" value, it will be decrypted using *PC-Wahl 10 ini-encraption* and highlighted.
 
-## PC-Wahl 10 ini-encraption
+## PC-Wahl 10 ini-encraption 1
 
 The ciphertext is encoded using a decimal octet string representation of binary data. E. g. a binary sequence in hex {0xff, 0x05, 0x7F} is encoded as ASCII string "255005127". The encryption algorithm does not even use a secret key:
 
@@ -41,6 +41,20 @@ for(i=0; i<clen; i+=3) {
       return pwlen;
    }
 ```
+
+## PC-Wahl 10 ini-encraption 2
+
+A second encraption method has been identified for *GPG passphrases* and HTTP-Upload passwords. It is located in INI-files as well, and is encoded as Hex-ASCII string, e. g. "8F888A8180ADEFE8". The encryption algorithm uses an eight-bit "secret" key that is initialized with 0x9E:
+
+```c
+   key = 0xe9;
+   
+   for(i=0; i<clen; i++) {
+      plaintext_string[i] = ciphertext_bytes[i] ^ key;
+      key -= 2;
+   }
+```
+
 
 ## Authors
 

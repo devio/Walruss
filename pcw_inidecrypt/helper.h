@@ -76,5 +76,6 @@ void print_hex_dword(int32_t d);
 */
 void print_hex_buf(char *s, uint32_t l);
 
+int decode_nibble(char n);
 
 #endif

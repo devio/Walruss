@@ -794,11 +794,11 @@ dictionary * iniparser_load(const char * ininame)
 
             case LINE_ERROR:
             iniparser_error_callback(
-              "iniparser: syntax error in %s (%d):\n-> %s\n",
+              "iniparser: syntax error in %s (%d): -> %s\n",
               ininame,
               lineno,
               line);
-            errs++ ;
+            //errs++ ; // THS - do not break on line-parse errors.
             break;
 
             default:

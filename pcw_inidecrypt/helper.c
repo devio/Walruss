@@ -43,6 +43,17 @@
 // bin to hexascii nibble
 static const unsigned char _tab[] = "0123456789ABCDEF";
 
+int decode_nibble(char n)
+{
+   int i = 0;
+   while(_tab[i] != toupper(n) & 0xff) {
+      i++;
+      if(i>16)
+         return -1;
+   }
+   return i;
+}
+
 void print_hex_byte(char b)
 {
     putchar( _tab[ (b >> 4) & 0xF ] );
