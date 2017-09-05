@@ -44,7 +44,7 @@ for(i=0; i<clen; i+=3) {
 
 ## PC-Wahl 10 ini-encraption 2
 
-A second encraption method has been identified for *GPG passphrases* and HTTP-Upload passwords. It is located in INI-files as well, and is encoded as Hex-ASCII string, e. g. "8F888A8180ADEFE8". The encryption algorithm uses an eight-bit "secret" key that is initialized with 0x9E:
+A second encraption method has been identified for *GPG passphrases* and HTTP-Upload passwords. It is located in INI-files as well, and is encoded as Hex-ASCII string, e. g. "8F888A8180ADEFE8". The encryption algorithm uses an eight-bit "secret" key that is initialized with 0xE9:
 
 ```c
    key = 0xe9;
