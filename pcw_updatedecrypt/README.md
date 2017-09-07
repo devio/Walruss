@@ -39,6 +39,9 @@ char secret_key[] = {
    0x85, 0x0c };
    
 [...]
+   unsigned int i = 1;
+   int counter = 0;
+   char key;
    do {
       counter++;
       counter &= 0x0F;
