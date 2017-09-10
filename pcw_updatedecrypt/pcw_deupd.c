@@ -86,7 +86,7 @@ int pcwahl_upd_crypt_data(char *result, size_t resultsize, char *input)
       return -1;
    }
       
-   ZeroMemory(result, sizeof(result));
+   ZeroMemory(result, resultsize);
    
    do {
       
