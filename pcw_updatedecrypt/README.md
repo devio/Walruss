@@ -1,6 +1,6 @@
 # Walruss PC-Wahl 10 Update Decryptor
 
-**PC-Wahl 10 Update Decryptor** is a program that can be used to extract and build update packages for PC-Wahl 10 installations that are deployed on computers, used in election offices.
+**PC-Wahl 10 Update Decryptor** is a program that can be used to extract and build update packages for PC-Wahl 10 installations that are deployed on computers used in election offices.
 
 ## Build
 
@@ -23,11 +23,11 @@ To **create** an update package, pass the path to the directory-structure to pcw
 
 `pcw_updatedecrypt.exe -c pcw10dat1-malicious pcw10dat1.010`
 
-The resuting file must then be zipped again, using any zip compatible program.
+The resulting file must then be zipped again using any zip compatible program.
 
-## PC-Wahl 10 update file encraption
+## PC-Wahl 10 update file encryption
 
-The encrypted file (extrension .010) has a 16 byte file-header. The first 4 bytes is a file magic field. The subsequent data is encrypted 0x2800 byte block-wise, using the following algorithm:
+The encrypted file (extension .010) has a 16 byte file-header. The first 4 bytes is a file magic field. The subsequent data is encrypted 0x2800 byte block-wise, using the following algorithm:
 
 ```c
 char secret_key[] = {
