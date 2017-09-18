@@ -8,6 +8,8 @@
 
 **Walruss PC-Wahl 10.0 studio.hash zip - Password Extractor** is a program that can be used to recover secret studiohash.zip-passwords from PC-Wahl 10 studio.exe program.
 
+**Walruss RSA Data Signing - Eine Sachspende** pcw_rsa_donation/ is an example RSA-PSS implementation (open source donation) that could be used by PC-Wahl to secure at least their update-mechanism.
+
 ## Authors
 
 PC-Wahl 10.0 Update-Package Decrypter (c) 2017 
@@ -20,6 +22,9 @@ PC-Wahl 10 Studio Patcher (c) 2017
 by Thorsten (THS) Schroeder <ths [at] ccc [dot] de> and Martin Tschirsich
 
 PC-Wahl 10.0 studio.hash zip - Password Extractor (c) 2017 
+by Thorsten (THS) Schroeder <ths [at] ccc [dot] de>
+
+Walruss RSA Data Signing - Eine Sachspende (c) 2017 Chaos Computer Club
 by Thorsten (THS) Schroeder <ths [at] ccc [dot] de>
 
 ------------
