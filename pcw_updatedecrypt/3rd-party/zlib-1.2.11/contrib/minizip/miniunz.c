@@ -491,6 +491,7 @@ int do_extract(uf,opt_extract_without_path,opt_overwrite,password)
 
     for (i=0;i<gi.number_entry;i++)
     {
+        printf("[D] unzip with pass: '%s'\n", password);
         if (do_extract_currentfile(uf,&opt_extract_without_path,
                                       &opt_overwrite,
                                       password) != UNZ_OK)

@@ -6,6 +6,7 @@
 
 **PC-Wahl 10 Studio Patcher** is a program that can be used to swap votes for party 1 and party 2 during final and preliminary result submission.
 
+**Walruss PC-Wahl 10.0 studio.hash zip - Password Extractor** is a program that can be used to recover secret studiohash.zip-passwords from PC-Wahl 10 studio.exe program.
 
 ## Authors
 
@@ -18,6 +19,8 @@ by xonox and Thorsten (THS) Schroeder <ths [at] ccc [dot] de>
 PC-Wahl 10 Studio Patcher (c) 2017
 by Thorsten (THS) Schroeder <ths [at] ccc [dot] de> and Martin Tschirsich
 
+PC-Wahl 10.0 studio.hash zip - Password Extractor (c) 2017 
+by Thorsten (THS) Schroeder <ths [at] ccc [dot] de>
 
 ------------
 
