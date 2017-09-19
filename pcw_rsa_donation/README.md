@@ -6,7 +6,7 @@ So macht updaten Spaß!
 
 ## Hintergrund
 
-Der Hersteller der Software **PC-Wahl 10.0** versuchte vor der Bundestagswahl im September 2017 hektisch und vergeblich, die Update-Funktion seiner Software anzusichern.
+Der Hersteller der Software **PC-Wahl 10.0** versuchte vor der Bundestagswahl im September 2017 hektisch und vergeblich, die Update-Funktion seiner Software abzusichern.
 Dies geschah mehrfach hintereinander mit teils absurden Mechanismen.
 
 Da sämtliche Versuche meist bereits nach wenigen Stunden vom Chaos Computer Club für unzureichend befunden wurden, stellen wir nun in einer Quellcode-Spende ein Verfahren zur Verfügung, welches ausreichend einfach im Rahmen des Ökosystems **PC-Wahl** zu implementieren ist.
