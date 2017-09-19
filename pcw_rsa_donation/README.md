@@ -6,7 +6,7 @@ So macht updaten Spaß!
 
 ## Hintergrund
 
-Der Hersteller der Software **PC-Wahl 10.0** versuchte vor der Bundestagswahl im September 2017 hektisch und vergeblich, die Update-Funktion seiner Software anzusichern.
+Der Hersteller der Software **PC-Wahl 10.0** versuchte vor der Bundestagswahl im September 2017 hektisch und vergeblich, die Update-Funktion seiner Software abzusichern.
 Dies geschah mehrfach hintereinander mit teils absurden Mechanismen.
 
 Da sämtliche Versuche meist bereits nach wenigen Stunden vom Chaos Computer Club für unzureichend befunden wurden, stellen wir nun in einer Quellcode-Spende ein Verfahren zur Verfügung, welches ausreichend einfach im Rahmen des Ökosystems **PC-Wahl** zu implementieren ist.
@@ -28,7 +28,7 @@ Der Versuch des Herstellers, dies mit GnuPG zu realisieren, resultierte in drei 
 
 ### Disclaimer: Signature best practices
 
-Für das Signieren der Wahldaten empfehlen wir die Verwendung einer X.509-PKI. Über eine solche wird die zentrale Verifizierung erleichtert und die Provosionierung skalierbar.
+Für das Signieren der Wahldaten empfehlen wir die Verwendung einer X.509-PKI. Über eine solche wird die zentrale Verifizierung erleichtert und die Provisionierung skalierbar.
 Hersteller und Wahlleiter scheinen jedoch nicht über Willen, Flexibilität und inzwischen auch nicht mehr über die notwendige Zeit zu verfügen, eine solche PKI herstellerübergreifend zu implementieren.
 Entsprechend passen wir uns mit diesem Vorschlag an die Vorlieben an und ergänzen sie um einen Hauch RSA.
 
